@@ -26,8 +26,8 @@ const Home = () => {
     <>
       <div className='container mx-auto my-8 min-h-[80vh] grid grid-cols-1 md:grid-cols-2'>
         <div className='flex flex-col justify-center items-start text-gray-200'>
-          <p className='text-4xl font-light'>Better Life Through</p>
-          <p className='text-6xl mt-4 font-semibold'>Better Dentistry</p>
+          <h1 className='text-4xl font-bold'>Better Life Through</h1>
+          <h1 className='text-6xl mt-4 font-bold'>Better Dentistry</h1>
           <p className='text-lg mt-8'>
             Join us to a fun and friendly dental environment. Our professionals
             are working so hard to see smile on your face that you deserve! We
@@ -44,7 +44,7 @@ const Home = () => {
         </div>
         <div className='flex justify-end items-center'>
           <img
-            className='w-9/12 opacity-90 rounded-full animate-pulse hover:scale-105'
+            className='w-9/12 rounded-full animate-pulse hover:scale-105'
             src='https://i.gifer.com/9P3z.gif'
             alt='tooth'
           />

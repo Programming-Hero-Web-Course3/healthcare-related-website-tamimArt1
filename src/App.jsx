@@ -1,15 +1,24 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import About from './pages/About';
+import Doctors from './pages/Doctors';
 import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Service from './pages/Service';
+import Services from './pages/Services';
 
 const App = () => {
   return (
     <Router>
-      <div className='bg-blue-800 h-screen z-0 overflow-auto'>
+      <div className='bg-blue-800 h-screen overflow-auto'>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
+          <Route exact path='/services' component={Services} />
+          <Route exact path='/doctors' component={Doctors} />
+          <Route exact path='/about' component={About} />
+          <Route path='/service/:id' component={Service} />
           <Route path='*' component={NotFound} />
         </Switch>
         <Footer />
@@ -17,13 +26,5 @@ const App = () => {
     </Router>
   );
 };
-
-function NotFound() {
-  return (
-    <div className='text-center min-h-[60vh]'>
-      <h1 className='mt-16 text-5xl text-red-400 font-bold'>Page Not Found</h1>
-    </div>
-  );
-}
 
 export default App;
