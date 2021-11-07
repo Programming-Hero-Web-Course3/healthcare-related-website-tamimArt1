@@ -19,10 +19,14 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/services' component={Services} />
-          <Route exact path='/doctors' component={Doctors} />
-          <Route exact path='/about' component={About} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={Signup} />
+          <PrivateRoute path='/doctors'>
+            <Doctors />
+          </PrivateRoute>
+          <PrivateRoute path='/about'>
+            <About />
+          </PrivateRoute>
           <PrivateRoute path='/service/:id'>
             <Service />
           </PrivateRoute>

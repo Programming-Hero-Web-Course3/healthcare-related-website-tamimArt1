@@ -88,10 +88,11 @@ const Service = () => {
       <h1 className='text-5xl my-4'>
         Treatment {id} : {title}
       </h1>
+      <h1 className='text-3xl my-4'>Price : ${parseInt(id) + 100}</h1>
       <img src={image} className='my-4' alt='image' />
       <p className='my-4'>{desc}</p>
       <button className='my-4 p-4 text-xl rounded-full bg-pink-600'>
-        Get Appoinment
+        Get Appointment
       </button>
     </div>
   );
