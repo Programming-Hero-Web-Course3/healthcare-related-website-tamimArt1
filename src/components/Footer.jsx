@@ -23,14 +23,14 @@ const Footer = () => {
                 <span className='ml-3 text-xl text-white'>DEV</span>
               </a>
               <p className='mt-2 text-sm text-white'>
-                Air plant banjo lyft occupy retro adaptogen indego
+                Developed by Tamim Muhammad
               </p>
             </div>
           </div>
           <div className='bg-gray-900'>
             <div className='container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row'>
               <p className='text-white text-sm text-center sm:text-left'>
-                © 2020 Dev — Tamim Muhammad
+                © 2021 Dev — Tamim Muhammad
               </p>
               <span className='inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start'>
                 <a className='text-gray-200'>
