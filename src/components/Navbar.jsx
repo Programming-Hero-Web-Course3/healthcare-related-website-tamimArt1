@@ -1,7 +1,12 @@
+import { useAtom } from 'jotai';
 import { FaTooth } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useFirebase from '../hooks/useFirebase';
+import { userInfoAtom } from '../store';
 
 const Navbar = () => {
+  const [user] = useAtom(userInfoAtom);
+  const { logOut } = useFirebase();
   return (
     <div className='container mx-auto rounded-2xl bg-gray-200 px-16 py-4 flex justify-between items-center mt-12 z-10'>
       <div className='flex items-center'>
@@ -23,6 +28,27 @@ const Navbar = () => {
         <Link to='/about' className='px-2 hover:animate-pulse font-medium'>
           About
         </Link>
+      </div>
+      <div>
+        {user?.email ? (
+          <span className='text-2xl text-gray-600 mr-2'>{user.email}</span>
+        ) : (
+          <span></span>
+        )}
+        {user?.email ? (
+          <button
+            className='bg-pink-600 px-8 py-2 cursor-pointer hover:bg-pink-800 text-lg text-gray-200 rounded-md'
+            onClick={logOut}
+          >
+            Logout
+          </button>
+        ) : (
+          <Link to='/login'>
+            <button className='bg-pink-600 px-8 py-2 cursor-pointer hover:bg-pink-800 text-lg text-gray-200 rounded-md'>
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

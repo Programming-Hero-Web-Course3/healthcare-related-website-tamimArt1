@@ -7,6 +7,9 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Service from './pages/Service';
 import Services from './pages/Services';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 const App = () => {
   return (
@@ -18,7 +21,11 @@ const App = () => {
           <Route exact path='/services' component={Services} />
           <Route exact path='/doctors' component={Doctors} />
           <Route exact path='/about' component={About} />
-          <Route path='/service/:id' component={Service} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <PrivateRoute path='/service/:id'>
+            <Service />
+          </PrivateRoute>
           <Route path='*' component={NotFound} />
         </Switch>
         <Footer />
