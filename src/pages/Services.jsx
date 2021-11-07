@@ -83,7 +83,7 @@ const Services = () => {
   return (
     <div className='container mx-auto mt-12 px-12 text-gray-200'>
       <h1 className='text-4xl text-center mb-12'>Treatments</h1>
-      <div className='grid gap-8 grid-cols-1 md:grid-cols-3 p-4'>
+      <div className='grid gap-8 grid-cols-1 lg:grid-cols-3 p-4'>
         {data.map((item) => (
           <TransparentCard key={item.id} item={item} btn={true} />
         ))}

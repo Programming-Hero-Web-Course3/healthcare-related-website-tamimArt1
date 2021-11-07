@@ -45,6 +45,7 @@ const useFirebase = () => {
       })
       .catch((error) => {
         setUser({ err: error.message });
+        alert(error.message);
       });
   };
 

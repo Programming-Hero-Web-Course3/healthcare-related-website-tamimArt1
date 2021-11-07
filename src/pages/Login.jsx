@@ -1,14 +1,22 @@
 import { useForm } from 'react-hook-form';
 import useFirebase from '../hooks/useFirebase';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
+import { useAtom } from 'jotai';
+import { userInfoAtom } from '../store';
 
 const Login = () => {
   const { emailPasswordLogin, googleClient } = useFirebase();
+  const [user] = useAtom(userInfoAtom);
   const { register, handleSubmit } = useForm();
   const location = useLocation();
+  const history = useHistory();
   const onSubmit = (data) => {
     emailPasswordLogin(data.email, data.password, location);
   };
+
+  if (user?.email) {
+    history.push('/');
+  }
 
   return (
     <div className='container mx-auto flex justify-center bg-gray-200 text-gray-800 my-16 rounded-2xl p-16'>

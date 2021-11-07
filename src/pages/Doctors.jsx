@@ -61,7 +61,7 @@ const Doctors = () => {
   return (
     <div className='container rounded-2xl bg-gray-200 mx-auto mt-12 px-12 text-gray-800'>
       <h1 className='text-4xl text-center pt-12'>Doctors</h1>
-      <div className='grid gap-8 grid-cols-1 md:grid-cols-3 p-4 mt-8'>
+      <div className='grid gap-8 grid-cols-1 lg:grid-cols-3 p-4 mt-8'>
         {data.map((item) => (
           <Card key={item.id} item={item} />
         ))}
