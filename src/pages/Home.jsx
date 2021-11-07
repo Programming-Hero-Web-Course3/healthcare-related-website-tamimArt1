@@ -1,31 +1,104 @@
+import { Link } from 'react-router-dom';
+import Card from '../components/Card';
+import operation from '../images/operation.jpg';
+
+const data = [
+  {
+    image:
+      'https://donto-react.netlify.app/static/media/appointment.c2e8b7ae.svg',
+    title: 'Easy Appoinment',
+    desc: 'Here you can take appoinment without any hassle',
+  },
+  {
+    image: 'https://donto-react.netlify.app/static/media/icon3.3d000cd0.svg',
+    title: 'Emergency Service',
+    desc: 'We provide emergency service better than others',
+  },
+  {
+    image: 'https://donto-react.netlify.app/static/media/icon.7cbafe70.svg',
+    title: '24/7 Service',
+    desc: 'Out team working their best to provide you 24/7 service',
+  },
+];
+
 const Home = () => {
   return (
-    <div className='container mx-auto my-8 min-h-[60vh] grid grid-cols-1 md:grid-cols-2'>
-      <div className='flex flex-col justify-center items-start text-gray-200'>
-        <p className='text-4xl font-light'>Better Life Through</p>
-        <p className='text-6xl mt-4 font-semibold'>Better Dentistry</p>
-        <p className='text-lg mt-8'>
-          Join us to a fun and friendly dental environment. Our professionals
-          are working so hard to see smile on your face that you deserve! We are
-          dedicated about our duties.
-        </p>
-        <div className='flex mt-8'>
-          <button className='px-8 rounded-sm cursor-pointer py-4 bg-pink-600 text-white text-lg hover:bg-gray-200 hover:text-gray-700 transition-all duration-700 ease-in-out font-semibold'>
-            Appointment
-          </button>
-          <button className='ml-2 px-8 rounded-sm cursor-pointer border border-gray-200 py-4 bg-transparent text-gray-200 text-lg hover:bg-pink-600 hover:border-none hover:text-gray-200 transition-all duration-700 ease-in-out font-semibold'>
-            Learn More
-          </button>
+    <>
+      <div className='container mx-auto my-8 min-h-[80vh] grid grid-cols-1 md:grid-cols-2'>
+        <div className='flex flex-col justify-center items-start text-gray-200'>
+          <p className='text-4xl font-light'>Better Life Through</p>
+          <p className='text-6xl mt-4 font-semibold'>Better Dentistry</p>
+          <p className='text-lg mt-8'>
+            Join us to a fun and friendly dental environment. Our professionals
+            are working so hard to see smile on your face that you deserve! We
+            are dedicated about our duties.
+          </p>
+          <div className='flex mt-8'>
+            <button className='px-8 rounded-sm cursor-pointer py-4 bg-pink-600 text-white text-lg hover:bg-gray-200 hover:text-gray-700 transition-all duration-700 ease-in-out font-semibold'>
+              Appointment
+            </button>
+            <button className='ml-2 px-8 rounded-sm cursor-pointer border border-gray-200 py-4 bg-transparent text-gray-200 text-lg hover:bg-pink-600 hover:border-none hover:text-gray-200 transition-all duration-700 ease-in-out font-semibold'>
+              Learn More
+            </button>
+          </div>
+        </div>
+        <div className='flex justify-end items-center'>
+          <img
+            className='w-9/12 opacity-90 rounded-full animate-pulse hover:scale-105'
+            src='https://i.gifer.com/9P3z.gif'
+            alt='tooth'
+          />
         </div>
       </div>
-      <div className='flex justify-end items-center'>
-        <img
-          className='w-9/12 opacity-90 rounded-full animate-pulse hover:scale-105'
-          src='https://i.gifer.com/9P3z.gif'
-          alt='tooth'
-        />
+      <div className='container mx-auto my-16 bg-gray-100 p-12 rounded-2xl'>
+        <div className='grid gap-12 grid-cols-1 md:grid-cols-3'>
+          {data.map((item) => (
+            <Card key={item.title} item={item} />
+          ))}
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 mt-32'>
+          <img src={operation} alt='operation' />
+          <div className='my-auto'>
+            <h1 className='text-4xl font-semibold text-gray-700'>
+              Welcome to a Family
+            </h1>
+            <p className='text-gray-600 my-4'>
+              Welcome to Datobbo Dental represents everything going to dentist
+              necessary. We have upgraded your dreaded dentist appointment and
+              transformed it into a relaxing.
+            </p>
+            <Link
+              to='/about'
+              className='text-pink-600 text-lg hover:text-blue-600'
+            >
+              About Us
+            </Link>
+            <div className='flex border border-gray-400 rounded-2xl mt-4 divide-x-2 divide-gray-300 text-gray-600 p-4 shadow-lg w-1/2'>
+              <div>
+                <div className='p-4'>
+                  <h1 className='text-2xl font-semibold'>900+</h1>
+                  <p>Happy Patients</p>
+                </div>
+                <div className='p-4'>
+                  <h1 className='text-2xl font-semibold'>17+</h1>
+                  <p>Years Experience</p>
+                </div>
+              </div>
+              <div>
+                <div className='p-4'>
+                  <h1 className='text-2xl font-semibold'>51+</h1>
+                  <p>Qualified Doctors</p>
+                </div>
+                <div className='p-4'>
+                  <h1 className='text-2xl font-semibold'>21+</h1>
+                  <p>Dental Awards</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
