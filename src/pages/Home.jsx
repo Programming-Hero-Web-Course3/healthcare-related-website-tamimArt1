@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <>
       <div className='container mx-auto my-8 min-h-[80vh] grid grid-cols-1 lg:grid-cols-2'>
-        <div className='flex flex-col justify-center items-center lg:items-start text-gray-200'>
+        <div className='flex flex-col justify-center text-center lg:text-left items-center lg:items-start text-gray-200'>
           <h1 className='text-4xl font-bold'>Better Life Through</h1>
           <h1 className='text-6xl mt-4 font-bold'>Better Dentistry</h1>
           <p className='text-lg mt-8'>
@@ -57,11 +57,11 @@ const Home = () => {
             are working so hard to see smile on your face that you deserve! We
             are dedicated about our duties.
           </p>
-          <div className='flex mt-8'>
+          <div className='flex flex-col md:flex-row mt-8'>
             <button className='px-8 rounded-sm cursor-pointer py-4 bg-pink-600 text-white text-lg hover:bg-gray-200 hover:text-gray-700 transition-all duration-700 ease-in-out font-semibold'>
               Appointment
             </button>
-            <button className='ml-2 px-8 rounded-sm cursor-pointer border border-gray-200 py-4 bg-transparent text-gray-200 text-lg hover:bg-pink-600 hover:border-none hover:text-gray-200 transition-all duration-700 ease-in-out font-semibold'>
+            <button className='ml-2 mt-4 md:mt-0 px-8 rounded-sm cursor-pointer border border-gray-200 py-4 bg-transparent text-gray-200 text-lg hover:bg-pink-600 hover:border-none hover:text-gray-200 transition-all duration-700 ease-in-out font-semibold'>
               Learn More
             </button>
           </div>
@@ -80,16 +80,16 @@ const Home = () => {
             <Card key={item.title} item={item} />
           ))}
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 mt-32'>
+        <div className='grid gap-4 grid-cols-1 lg:grid-cols-2 mt-32'>
           <img src={operation} alt='operation' />
           <div className='flex flex-col items-center lg:items-start mt-12 lg:mt-0'>
             <h1 className='text-4xl font-semibold text-gray-700'>
               Welcome to a Family
             </h1>
             <p className='text-gray-600 my-4'>
-              Welcome to Datobbo Dental represents everything going to dentist
-              necessary. We have upgraded your dreaded dentist appointment and
-              transformed it into a relaxing.
+              Welcome to Happy Teeth Dental represents everything going to
+              dentist necessary. We have upgraded your dreaded dentist
+              appointment and transformed it into a relaxing.
             </p>
             <Link
               to='/about'
@@ -97,7 +97,7 @@ const Home = () => {
             >
               About Us
             </Link>
-            <div className='flex border border-gray-400 rounded-2xl mt-4 divide-x-2 divide-gray-300 text-gray-600 p-4 shadow-lg w-1/2'>
+            <div className='flex border w-[300px] border-gray-400 rounded-2xl mt-4 divide-x-2 divide-gray-300 text-gray-600 p-4 shadow-lg'>
               <div>
                 <div className='p-4'>
                   <h1 className='text-2xl font-semibold'>900+</h1>
@@ -129,6 +129,39 @@ const Home = () => {
         {treatments.map((item) => (
           <TransparentCard key={item.title} item={item} />
         ))}
+      </div>
+      <h1 className='text-center text-5xl font-bold text-gray-200'>
+        Get an Appointment
+      </h1>
+      <div className='container mx-auto rounded-2xl grid gap-4 grid-cols-1 lg:grid-cols-2 my-12 p-2 bg-gray-200'>
+        <div className='flex flex-col justify-center items-center lg:items-start'>
+          <input
+            type='text'
+            className='p-4 text-lg w-[300px] lg:w-full rounded-md mb-4'
+            placeholder='Name'
+          />
+          <input
+            type='email'
+            className='p-4 text-lg w-[300px] lg:w-full rounded-md mb-4'
+            placeholder='Email'
+          />
+          <textarea
+            rows='4'
+            cols='30'
+            className='resize-none p-4 text-xl rounded-md w-[300px] lg:w-full'
+          >
+            Write your message
+          </textarea>
+          <button className='px-8 rounded-sm cursor-pointer py-4 bg-pink-600 text-gray-200 text-lg hover:bg-gray-700 transition-all duration-700 ease-in-out font-semibold mt-4 lg:w-[200px] lg:rounded-full'>
+            Send
+          </button>
+        </div>
+        <div className='bg-transparent p-8'>
+          <img
+            src='https://donto-react.netlify.app/static/media/appointment.f32571dc.png'
+            alt='appointment'
+          />
+        </div>
       </div>
     </>
   );

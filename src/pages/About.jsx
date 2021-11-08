@@ -1,5 +1,3 @@
-import TransparentCard from '../components/TransparentCard';
-
 const data = [
   {
     id: 1,
@@ -29,7 +27,7 @@ const About = () => {
       <h1 className='text-5xl text-pink-500 text-center font-bold my-8'>
         About Us
       </h1>
-      <div className='bg-gray-200 text-center py-32 px-32 rounded-2xl mx-auto'>
+      <div className='bg-gray-200 py-32 px-32 rounded-2xl mx-auto'>
         <h1 className='text-4xl text-gray-800'>Our Dental Practice</h1>
         <p className='text-xl text-gray-600 mt-8'>
           Since 1998, Donto Dentistry has been proud to combine modern
@@ -39,15 +37,28 @@ const About = () => {
         </p>
       </div>
       <div className='text-center py-32 px-32 rounded-2xl mx-auto'>
-        <h1 className='text-4xl text-pink-500'>Patient Focused Approach</h1>
-        <div className='mt-12 grid grid-cols-1 md:grid-cols-3 text-gray-200'>
+        <h1 className='text-4xl font-bold text-pink-500'>
+          Patient Focused Approach
+        </h1>
+        <div className='mt-12 grid gap-4 grid-cols-1 lg:grid-cols-3 text-gray-200'>
           {data.map((item) => (
-            <TransparentCard key={item.id} item={item} btn={false} />
+            <Card key={item.id} item={item} />
           ))}
         </div>
       </div>
     </div>
   );
 };
+
+function Card({ item }) {
+  const { image, title, desc } = item;
+  return (
+    <div className='border h-auto w-[300px] lg:w-full border-gray-400 bg-transparent hover:bg-blue-700 p-8 mt-4 lg:mt-0 flex flex-col justify-self-center text-center lg:text-left items-center lg:items-start justify-between rounded-2xl'>
+      <img src={image} alt='teeth' />
+      <h1 className='text-3xl mt-4 lg:mt-0'>{title}</h1>
+      <p>{desc}</p>
+    </div>
+  );
+}
 
 export default About;

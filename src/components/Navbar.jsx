@@ -8,7 +8,7 @@ const Navbar = () => {
   const { user } = useContext(userContext);
   const { logOut } = useFirebase();
   return (
-    <div className='container mx-auto rounded-2xl bg-gray-200 px-16 py-4 flex flex-col lg:flex-row justify-between items-center mt-12 z-10'>
+    <div className='container mx-auto rounded-2xl bg-gray-200 px-16 py-4 flex flex-col xl:flex-row justify-between items-center mt-12 z-10'>
       <div className='flex items-center'>
         <FaTooth className='text-2xl text-pink-600 animate-bounce' />
         <h1 className='ml-2 text-3xl text-blue-500 font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600'>
