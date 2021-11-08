@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import useFirebase from '../hooks/useFirebase';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
   const { emailPasswordSignUp, googleClient } = useFirebase();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -52,4 +52,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

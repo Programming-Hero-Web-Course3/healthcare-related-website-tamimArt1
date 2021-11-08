@@ -1,12 +1,9 @@
 import { useForm } from 'react-hook-form';
 import useFirebase from '../hooks/useFirebase';
 import { Link, useLocation } from 'react-router-dom';
-import { useAtom } from 'jotai';
-import { userInfoAtom } from '../store';
 
 const Login = () => {
   const { emailPasswordLogin, googleClient } = useFirebase();
-  const [user] = useAtom(userInfoAtom);
   const { register, handleSubmit } = useForm();
   const location = useLocation();
   const onSubmit = (data) => {
