@@ -41,7 +41,7 @@ const Navbar = () => {
           About
         </Link>
       </div>
-      <div className='flex flex-col lg:flex-row'>
+      <div className='flex flex-col lg:flex-row lg:items-center'>
         {user?.email ? (
           <span className='text-2xl text-gray-600 mr-2 mt-2 lg:mt-0'>
             {user.email}

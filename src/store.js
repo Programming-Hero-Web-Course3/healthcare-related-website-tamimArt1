@@ -1,4 +1,4 @@
-import { atom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 
 // ### userInfo ----------------------------------------------------------------
-export const userInfoAtom = atom({});
+export const userInfoAtom = atomWithStorage('hospital-user', {});
