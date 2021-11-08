@@ -11,23 +11,21 @@ const Login = () => {
 
   return (
     <div className='container mx-auto flex justify-center bg-gray-200 text-gray-800 my-16 rounded-2xl p-16'>
-      <div className='p-4 border border-gray-500'>
+      <div className='p-4 border border-gray-500 w-full'>
         <h1 className='mb-4 text-4xl font-bold'>Signup</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
-            className='mb-4 p-4 text-xl rounded-md focus:outline-none'
+            className='mb-4 p-4 text-xl rounded-md focus:outline-none w-full'
             {...register('email')}
             placeholder='Email'
             type='email'
-          />{' '}
-          <br />
+          />
           <input
-            className='mb-4 p-4 text-xl rounded-md focus:outline-none'
+            className='mb-4 p-4 text-xl rounded-md focus:outline-none w-full'
             {...register('password')}
             placeholder='Password'
             type='password'
           />
-          <br />
           <input
             className='bg-pink-600 px-8 py-2 cursor-pointer hover:bg-pink-800 text-lg text-gray-200 rounded-md'
             type='submit'
@@ -42,9 +40,7 @@ const Login = () => {
         >
           Login page
         </Link>
-        <h3 style={{ marginTop: '2rem' }}>
-          -------------------- Or Login with Google? -----------------
-        </h3>
+        <h3 style={{ marginTop: '2rem' }}>Or Login with Google?</h3>
         <button
           className='bg-pink-600 px-8 py-2 cursor-pointer hover:bg-pink-800 text-lg text-gray-200 rounded-md w-full mt-4'
           onClick={googleClient}
